@@ -1,7 +1,8 @@
 import "./App.css"
-import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { Route, Routes, useNavigate } from "react-router-dom"
+
 import Navbar from "./components/Common/Navbar"
 import OpenRoute from "./components/core/Auth/OpenRoute"
 import PrivateRoute from "./components/core/Auth/PrivateRoute"
@@ -23,14 +24,14 @@ import Error from "./pages/Error"
 import ForgotPassword from "./pages/ForgotPassword"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
+import ResetPasswordOtp from "./pages/ResetPasswordOtp"
 import Signup from "./pages/Signup"
 import UpdatePassword from "./pages/UpdatePassword"
 import VerifyEmail from "./pages/VerifyEmail"
+import VerifyLoginOtp from "./pages/VerifyLoginOtp"
 import ViewCourse from "./pages/ViewCourse"
 import { getUserDetails } from "./services/operations/profileAPI"
 import { ACCOUNT_TYPE } from "./utils/constants"
-import VerifyLoginOtp from "./pages/VerifyLoginOtp"
-import ResetPasswordOtp from "./pages/ResetPasswordOtp"
 
 function App() {
   const dispatch = useDispatch()
@@ -67,10 +68,9 @@ function App() {
           path="verify-login-otp"
           element={
             <OpenRoute>
-              <VerifyLoginOtp/>
+              <VerifyLoginOtp />
             </OpenRoute>
           }
-
         />
         <Route
           path="forgot-password"
@@ -101,7 +101,7 @@ function App() {
           element={
             <OpenRoute>
               <Signup />
-            </OpenRoute>  
+            </OpenRoute>
           }
         />
         <Route
